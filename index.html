@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>AI English Speaking Coach</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png"> -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>🎤 AI English Coach</h1>
+            <div class="mode-selector">
+                <select id="modeSelect" aria-label="Select conversation mode">
+                    <option value="daily">💬 Daily Conversation</option>
+                    <option value="interview">👔 Interview Practice</option>
+                    <option value="coach">📝 Speaking Coach</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container" id="chatContainer">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be dynamically added here -->
+                <div class="message ai-message">
+                    <div class="message-content">
+                        Hello! I'm your AI English speaking coach. Select a mode and click the microphone to start practicing!
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <button id="startBtn" class="record-btn">
+                <span class="microphone-icon">🎤</span>
+                <span id="btnText">Start Speaking</span>
+            </button>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span id="statusText">Ready</span>
+            </div>
+        </div>
+
+        <!-- Analysis Panel -->
+        <div class="analysis-panel" id="analysisPanel">
+            <h3>Speech Analysis <span class="toggle-icon" id="toggleAnalysis">▼</span></h3>
+            <div class="analysis-content" id="analysisContent">
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <label>Speed (WPM)</label>
+                        <span id="speechSpeed">0</span>
+                    </div>
+                    <div class="metric">
+                        <label>Fluency</label>
+                        <span id="fluencyScore">0%</span>
+                    </div>
+                    <div class="metric">
+                        <label>Pronunciation</label>
+                        <span id="pronunciationScore">0%</span>
+                    </div>
+                    <div class="metric">
+                        <label>Filler Words</label>
+                        <span id="fillerWords">0</span>
+                    </div>
+                </div>
+                <div class="vocabulary-section">
+                    <label>Vocabulary Level:</label>
+                    <span id="vocabularyLevel">Basic</span>
+                </div>
+                <div class="suggestions-section" id="suggestions">
+                    <!-- Suggestions will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h3>Daily Progress</h3>
+            <div class="progress-chart" id="progressChart">
+                <!-- Progress bars will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/ai-service.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
