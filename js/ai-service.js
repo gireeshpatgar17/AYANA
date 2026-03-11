@@ -1,7 +1,7 @@
 class AIService {
     constructor() {
         // Change this to your Groq API key
-        this.apiKey = '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'; // Replace with your actual Groq key
+        this.apiKey = GROQ_API_KEY; // Replace with your actual Groq key
         this.apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
         this.currentMode = 'daily';
         this.conversationHistory = [];
