@@ -1,7 +1,7 @@
 class AIService {
     constructor() {
-        // Use environment variable with fallback
-        this.apiKey = process.env.GROQ_API_KEY || '';
+        // Change this to your Groq API key
+        this.apiKey = process.env.GROQ_API_KEY || ''; // Replace with your actual Groq key
         this.apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
         this.currentMode = 'daily';
         this.conversationHistory = [];
@@ -14,9 +14,6 @@ class AIService {
         };
         
         console.log('AI Service initialized with Groq (free API)');
-        if (!this.apiKey) {
-            console.warn('No API key found - will use fallback responses');
-        }
     }
 
     setMode(mode) {
@@ -47,12 +44,6 @@ class AIService {
     }
 
     async getResponse(userMessage, analysis) {
-        // Check if API key is missing - use fallback responses
-        if (!this.apiKey) {
-            console.warn('No API key found - using fallback responses');
-            return this.getFallbackResponse();
-        }
-
         try {
             // Add context from speech analysis for coaching mode
             if (this.currentMode === 'coach' && analysis) {
