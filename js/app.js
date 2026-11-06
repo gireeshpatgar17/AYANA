@@ -47,21 +47,6 @@ class EnglishCoachApp {
     this.updateProgressChart();
     this.checkInstallPrompt();
 
-    // Add this to app.js inside initializeApp() for testing
-    async function testGroqConnection() {
-      try {
-        const response = await fetch("https://api.groq.com/openai/v1/models", {
-          headers: {
-            Authorization: `Bearer YOUR_GROQ_API_KEY_HERE`,
-          },
-        });
-        const data = await response.json();
-        console.log("✅ Groq connection successful! Available models:", data);
-      } catch (error) {
-        console.error("❌ Groq connection failed:", error);
-      }
-    }
-    testGroqConnection();
   }
 
   toggleRecording() {
